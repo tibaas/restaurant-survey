@@ -79,7 +79,7 @@ function Question({ title, alternatives }: QuestionProps) {
             <div key={index}>
                  <LabelContainer>
                     <label>
-                        2
+                        3
                         <input 
                             type="radio" 
                             value={alternative}
