@@ -19,7 +19,7 @@ max-height: 50rem;
 padding: 2rem;
 box-shadow: 1px 1px 10px gray;
 border-radius: 20px;
-margin-top: 6rem;
+margin-top: 6rem; 
 background: silver;
 
 
