@@ -7,6 +7,7 @@ align-items: center;
 justify-content: center;
 
 
+
 `
 
 export const GlobalContent = styled.div`
@@ -36,6 +37,8 @@ form {
     width: 30rem;
     max-height: 50rem;
     margin-top: 2rem;
+
+    box-shadow: none;
 }
 
 

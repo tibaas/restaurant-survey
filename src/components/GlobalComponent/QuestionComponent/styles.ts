@@ -51,6 +51,8 @@ align-items: center;
 @media (max-width: 540px) {
 
 width:22.5rem;
+
+
     div {
         width:20rem;
     }

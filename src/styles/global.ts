@@ -10,7 +10,13 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
     font-family: "Poppins", sans-serif;
+
+    @media (max-width: 540px) {
+        background: silver;
+    }
 }
+
+
 
 
 `
