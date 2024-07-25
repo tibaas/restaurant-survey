@@ -32,6 +32,13 @@ form {
 }
 
 
+@media (max-width:540px ) {
+    width: 30rem;
+    max-height: 50rem;
+    margin-top: 2rem;
+}
+
+
 `
 
 export const ImageContainer = styled.div`
@@ -45,4 +52,11 @@ img {
 }
 
 
+@media (max-width:540px ) {
+    img {
+        display: none;
+        
+    }
+}
 `
+

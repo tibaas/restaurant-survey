@@ -47,6 +47,21 @@ align-items: center;
     }
 }
 
+
+@media (max-width: 540px) {
+
+width:22.5rem;
+    div {
+        width:20rem;
+    }
+    span{
+        font-size: 12px;
+    }
+    p {
+        font-size:13px;
+    } 
+}
+
 `
 
 export const LabelContainer = styled.div`
@@ -66,10 +81,11 @@ cursor: pointer;
         transition: ease .7s; 
     }
 
+@media (max-width: 540px) {
+    min-width: 20rem;
+}
+
 `
-
-
-
 
 export const NextButton = styled.button`
 
@@ -99,7 +115,14 @@ outline: none;
         transition: ease .6s;
     }
 
+    @media (max-width: 540px) {
+        span {
+            display: none;
+        }
+        width: 4rem;
 
+        margin-left: 0;
+    }
 `
 
 
