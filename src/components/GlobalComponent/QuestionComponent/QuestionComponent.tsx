@@ -1,5 +1,5 @@
 import { SetStateAction, useState } from "react";
-import { LabelContainer, NextButton, QuestionContainer, TextAreaContainer} from "./styles";
+import { FormButton, LabelContainer, NextButton, QuestionContainer, TextAreaContainer} from "./styles";
 import { ArrowCircleRight } from 'phosphor-react'
 
 const questions = [
@@ -137,14 +137,12 @@ export function QuestionComponent() {
                             <TextAreaContainer>
                                 <p>Deixe uma sugestão</p>
                                 <textarea 
-                                rows={9} 
-                                cols={35} 
+                                rows={7} 
+                                cols={32} 
                                 value={textAreaValue} 
                                 onChange={handleTextArea} />
                             </TextAreaContainer>
-                            <div>
-                                <NextButton type="submit">Finalizar</NextButton>
-                            </div>
+                            <FormButton type="submit"><span>FINALIZAR</span></FormButton>
                         </>
                     )}                  
                 </div>

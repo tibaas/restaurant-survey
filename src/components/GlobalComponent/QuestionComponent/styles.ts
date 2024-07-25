@@ -127,6 +127,44 @@ outline: none;
     }
 `
 
+export const  FormButton = styled.button`
+
+width: 7rem;
+height: 2.3rem;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: 6rem;
+margin-top: 1.5rem;
+gap: 0.4rem;
+border-radius: 20px;
+border: 2px solid #e20b12;
+background: #e0e0e0;
+color: #e20b12;
+outline: none;
+
+
+    span {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    &:hover {
+        background: red;
+        border: 1px solid #e20b12;
+        color: #fff;
+        box-shadow: 3px 3px 1px #fff;
+        transition: ease .6s;
+    }
+
+
+
+
+`
+
+
+
 
 export const TextAreaContainer = styled.div`
 
@@ -143,6 +181,9 @@ textarea {
     font-size: 0.875rem;
     color: #3d3d3d;
     box-shadow: 5px 5px 8px #525252;
+
 }
+
+
 
 `
