@@ -135,7 +135,7 @@ export function QuestionComponent() {
                     ) : (
                         <>
                             <TextAreaContainer>
-                                <p>Deixe uma sugestão</p>
+                                <p>Deixe-nos uma sugestão</p>
                                 <textarea 
                                 rows={7} 
                                 cols={32} 

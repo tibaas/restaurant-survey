@@ -68,6 +68,7 @@ width:22.5rem;
 
 export const LabelContainer = styled.div`
 
+
 min-width: 27rem;
 height: 2rem;
 border-bottom: 3px solid gray;
