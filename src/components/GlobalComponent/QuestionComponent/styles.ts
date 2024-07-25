@@ -11,7 +11,7 @@ border: 1px solid gray;
 box-shadow:  5px 5px gray;
 padding: 1rem;
 border-radius: 15px;
-
+font-smooth: always;  
 
 p {
     font-weight: bold;
@@ -51,8 +51,7 @@ align-items: center;
 @media (max-width: 540px) {
 
 width:22.5rem;
-
-
+    
     div {
         width:20rem;
     }
