@@ -7,8 +7,8 @@ export function Router() {
     return (
         <Routes>
             <Route path="/" element={<GlobalComponent />} />
-            <Route path="/login" element={<LogScreen />} />
-            <Route path="/admin" element={<AdminPage />} /> 
+            <Route path="login" element={<LogScreen />} />
+            <Route path="admin" element={<AdminPage />} /> 
         </Routes>
     )
 }
