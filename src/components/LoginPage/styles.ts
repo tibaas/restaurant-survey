@@ -60,9 +60,10 @@ input {
     border: 0;
     border-radius: 10px;
     outline: none;
-    text-align: justify;
     text-indent: 15%;
     font-size: 0.875rem;
+    
+
 
     &:focus{ 
         border-bottom: 3px solid #000;

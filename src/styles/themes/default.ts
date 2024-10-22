@@ -5,5 +5,6 @@ export const defaultTheme = {
     background: '#0B1B2B',
     baseSpan: '#7B96B2',
     baseLabel: '#3A536B',
+    containerBackground:'#bebed2' ,
 
 }

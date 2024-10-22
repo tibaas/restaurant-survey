@@ -18,10 +18,12 @@ flex-direction: column;
 width: 38rem;
 max-height: 50rem;
 padding: 2rem;
-box-shadow: 1px 1px 10px gray;
+box-shadow: 3px 3px 20px #3A536B;
 border-radius: 20px;
-margin-top: 6rem; 
-background: silver;
+margin-top: 4rem; 
+/* background: ${props => props.theme['containerBackground']}; */
+
+background: #949ae9;
 
 
 form {

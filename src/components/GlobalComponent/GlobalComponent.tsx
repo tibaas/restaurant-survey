@@ -1,6 +1,6 @@
 
 import { GlobalContainer, GlobalContent, ImageContainer } from "./styles";
-import Wave from '../../assets/bgimage.svg'
+import Wave from '../../assets/bgimage-gradient.svg'
 import { QuestionComponent } from "./QuestionComponent/QuestionComponent";
 
 export function GlobalComponent() {
