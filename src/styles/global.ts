@@ -12,8 +12,13 @@ body {
     font-family: "Poppins", sans-serif;
 
     @media (max-width: 540px) {
-        background: rgb(190,190,210);
-        background: radial-gradient(circle, rgba(190,190,210,1) 0%, rgba(148,154,233,1) 100%);
+        /* background: rgb(190,190,210);
+        background: radial-gradient(circle, rgba(190,190,210,1) 0%, rgba(148,154,233,1) 100%); */
+        /* background: #949ae9; */
+
+
+        background: rgb(255,255,255);
+        background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(36,154,145,0.989233193277311) 81%);
     }
 }
 

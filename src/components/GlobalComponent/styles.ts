@@ -5,7 +5,9 @@ export const GlobalContainer = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-
+height: 100vh;
+background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(36,154,145,0.989233193277311) 81%);
 
 
 `
@@ -20,10 +22,11 @@ max-height: 50rem;
 padding: 2rem;
 box-shadow: 3px 3px 20px #3A536B;
 border-radius: 20px;
-margin-top: 4rem; 
 /* background: ${props => props.theme['containerBackground']}; */
 
-background: #949ae9;
+/* background: #949ae9; */
+/* background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(36,154,145,0.989233193277311) 81%); */
 
 
 form {
@@ -46,22 +49,22 @@ form {
 
 `
 
-export const ImageContainer = styled.div`
+// export const ImageContainer = styled.div`
 
-img {
-    position: fixed;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+// img {
+//     position: fixed;
+//     z-index: -1;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+// }
 
 
-@media (max-width:540px ) {
-    img {
-        display: none;
+// @media (max-width:540px ) {
+//     img {
+//         display: none;
         
-    }
-}
-`
+//     }
+// }
+// `
 

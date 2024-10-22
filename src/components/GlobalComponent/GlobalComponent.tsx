@@ -1,15 +1,14 @@
 
-import { GlobalContainer, GlobalContent, ImageContainer } from "./styles";
-import Wave from '../../assets/bgimage-gradient.svg'
+import { GlobalContainer, GlobalContent } from "./styles";
 import { QuestionComponent } from "./QuestionComponent/QuestionComponent";
 
 export function GlobalComponent() {
     return (
         <>
                 
-                <ImageContainer>
+                {/* <ImageContainer>
                     <img src={Wave} alt="" />                
-                </ImageContainer>            
+                </ImageContainer>             */}
 
 
             <GlobalContainer>
