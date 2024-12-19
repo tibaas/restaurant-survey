@@ -160,10 +160,6 @@ outline: none;
 
 
 `
-
-
-
-
 export const TextAreaContainer = styled.div`
 
 display: flex;

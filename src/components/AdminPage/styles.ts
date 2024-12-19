@@ -9,8 +9,6 @@ flex-direction: column;
 
 section {
 
-
-/* border: 2px solid darkcyan; */
 display: flex;
 align-items: center;
 justify-content: center;
@@ -18,8 +16,6 @@ flex-direction: column;
 height: 40rem;
 width: 100%;
 padding: 2rem;
-/* box-shadow: 3px 3px 20px #3A536B;
-border-radius: 20px; */
 margin-top: 2rem;
 
 
@@ -40,13 +36,20 @@ table {
       
     }
     td {
+
+
       button {
         color: #fff;
         display: none;
         position: absolute;
-        margin-left: 55px;
+        margin-left: 15px;
         margin-top: 3px;
+        appearance: none;
+
+
       }
+
+
 
     }
       
@@ -69,8 +72,6 @@ table {
 
 
   }
-
-
 
 `
 
