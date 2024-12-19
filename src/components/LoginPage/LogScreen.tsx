@@ -4,13 +4,6 @@ import { Lock, UserCircle } from "phosphor-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
-
-
-
-
-
 export function LogScreen({setIsAuthenticated}: {setIsAuthenticated: (value: boolean) => void}) {
 
     const [userName, setUserName] = useState("")
@@ -19,15 +12,12 @@ export function LogScreen({setIsAuthenticated}: {setIsAuthenticated: (value: boo
 
     function handleLoginSubmit(event: React.FormEvent) {
         event.preventDefault()
-
         if (userName === "admin" && password === "password") {
-            setIsAuthenticated(true);
-            alert("Login bem-sucedido!");
+            setIsAuthenticated(true)
             navigate("/admin")
           } else {
-            alert("Credenciais inválidas!");
+            alert("Credenciais inválidas!")
           }
-
     }
 
     return (

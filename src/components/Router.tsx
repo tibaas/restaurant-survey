@@ -6,7 +6,7 @@ import { ProtectedRoutes }  from '../components/ProtectedRoute'
 import { useEffect, useState } from 'react'
 
 export function Router() {
-    const [isAuthenticated, setIsAuthenticated] = useState(() => {
+        const [isAuthenticated, setIsAuthenticated] = useState(() => {
         const storedAuth = sessionStorage.getItem("isAuthenticated")
         return storedAuth === "true"
     })
@@ -20,7 +20,7 @@ export function Router() {
             <Route path="/" element={<GlobalComponent />} /> 
             <Route path="/login" element={<LogScreen setIsAuthenticated={setIsAuthenticated} />} />
             <Route element={<ProtectedRoutes isAuthenticated={isAuthenticated} />}>
-                <Route path="/admin" element={<AdminPage />} /> 
+                <Route path="/admin" element={<AdminPage setIsAuthenticated={setIsAuthenticated} />} /> 
             </Route>
             
         </Routes>
