@@ -1,44 +1,77 @@
 import { GlobalLoginPageContainer, LoginContainer, InputsContainer, LogoContainer } from "./styles";
 import LoginPage from '../../assets/green-login-login.svg'
-import BgLogo from '../../assets/restaurantelogo.svg'
 import { Lock, UserCircle } from "phosphor-react";
-export function LogScreen() {
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+
+
+
+
+
+
+
+export function LogScreen({setIsAuthenticated}: {setIsAuthenticated: (value: boolean) => void}) {
+
+    const [userName, setUserName] = useState("")
+    const [password, setUserPassword] = useState("")
+    const navigate = useNavigate()
+
+    function handleLoginSubmit(event: React.FormEvent) {
+        event.preventDefault()
+
+        if (userName === "admin" && password === "password") {
+            setIsAuthenticated(true);
+            alert("Login bem-sucedido!");
+            navigate("/admin")
+          } else {
+            alert("Credenciais inválidas!");
+          }
+
+    }
+
     return (
         <>
             <GlobalLoginPageContainer>
                 <LogoContainer>
-                    {/* <h1>Bem vindo</h1> */}
-                    <img src={BgLogo} alt="" />
+                    
                 </LogoContainer>
                 <img src={LoginPage} alt="" /> 
                 <LoginContainer>
                     <h1>Login</h1>
-                    <InputsContainer>
-                        <label>
-                        <span>Usuário</span>
-                        <div>
+                    <form onSubmit={handleLoginSubmit}>
+                        <InputsContainer>
+                            <label>
+                            <span>Usuário</span>
+                            <div>
 
-                            <UserCircle size={23} />
-                        </div>
-                            <input   type="text" />
-                            
-                        </label>
-
-                        <label>
-                        <span>Senha</span>
-                            <input type="password" />
-                        <div>
-                            
-                            <Lock size={23} />
-                        </div>
-                        </label>
-
-                        <button type="submit">
-                            Conectar
-                        </button>
-
+                                <UserCircle size={23} />
+                            </div>
+                                <input 
+                                type="text" 
+                                value={userName}
+                                onChange={(e) => setUserName(e.target.value)}  
+                                />
+                                
+                            </label>
+                            <label>
+                            <span>Senha</span>
+                                <input 
+                                type="password" 
+                                value={password} 
+                                onChange={(e) => setUserPassword(e.target.value)}
+                                />
+                            <div>                                
+                                <Lock size={23} />
+                            </div>
+                            </label>
+                            <button type="submit">
+                                Conectar
+                            </button>
                         
-                    </InputsContainer>
+                        </InputsContainer>
+                    </form>    
+
                 </LoginContainer>         
             </GlobalLoginPageContainer>      
         </>
