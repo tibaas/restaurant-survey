@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthProps } from "../LoginPage/LogScreen";
 import { HeaderContainer, PageContainer } from "./styles";
 import { useEffect, useState } from "react";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs, getFirestore } from "firebase/firestore";
 import { firebaseApp } from "../../firebaseConfig";
 import { Timestamp } from "firebase/firestore"
 
@@ -57,6 +57,10 @@ export function AdminPage({ setIsAuthenticated }:AuthProps) {
       }, [pesquisaCollectionRef]);
 
 
+      async function deleteRow(id: string) {
+        const rowDoc = doc(db, "pesquisa", id)
+        await deleteDoc(rowDoc)
+      }
 
     return (
         <>
@@ -94,7 +98,15 @@ export function AdminPage({ setIsAuthenticated }:AuthProps) {
                                         <td>{item.organizacao}</td>
                                         <td>{item.valorCobrado}</td>
                                         <td>{item.indicacao}</td>
-                                        <td>{item.sugestao}</td>
+                                        <td>{item.sugestao}
+                                            <button onClick={() => deleteRow(item.id)}> X </button>     
+                                        </td>
+                                        
+                                            
+                                        
+
+
+ 
                                     </tr>
                                     )
                                 })
