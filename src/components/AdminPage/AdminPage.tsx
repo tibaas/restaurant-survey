@@ -87,7 +87,6 @@ export function AdminPage({ setIsAuthenticated }:AuthProps) {
                         </tr>
                         </thead>
                         <tbody>
-
                             {
                                 databaseFile.map((item) => {
                                     return(
@@ -101,12 +100,6 @@ export function AdminPage({ setIsAuthenticated }:AuthProps) {
                                         <td>{item.sugestao}
                                             <button onClick={() => deleteRow(item.id)}> X </button>     
                                         </td>
-                                        
-                                            
-                                        
-
-
- 
                                     </tr>
                                     )
                                 })

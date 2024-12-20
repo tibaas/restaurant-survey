@@ -89,6 +89,19 @@ align-items: center;
 
 button {
     margin-left: 100rem;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border:0;
+    background: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background: teal;
+      color: white;
+      font-weight: bold;
+      border:2px solid #fff;
+    }
 }
 
 
