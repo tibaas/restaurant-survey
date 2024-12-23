@@ -41,7 +41,7 @@ table {
       button {
         color: #fff;
         display: none;
-        position: absolute;
+        /* position: absolute; */
         margin-left: 15px;
         margin-top: 3px;
         appearance: none;
@@ -66,7 +66,7 @@ table {
     tr:hover {
       background: teal;
         button {
-          display:inline;
+          display: inline;
         }    
     }
 
