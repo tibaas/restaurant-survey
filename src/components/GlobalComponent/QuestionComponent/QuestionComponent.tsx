@@ -122,7 +122,7 @@ export function QuestionComponent() {
           setCurrentPage(0);
         } catch (error) {
           console.error("Erro ao enviar os dados: ", error);
-          alert("Erro ao enviar os dados!");
+          alert("Preencha os dados e tente novamente!");
         }
       };
 
