@@ -89,12 +89,9 @@ export function QuestionComponent() {
             setCurrentPage((state) => state + 1)
         }
     }
-
     const handleTextArea = (e: { target: { value: SetStateAction<string> }}) => {
-        setTextAreaValue(e.target.value)
-        
+        setTextAreaValue(e.target.value)      
     }
-
     const handleOptionChange = (questionId: number, selectedOption: string) => {
         setResponses((prevState) => ({
           ...prevState,
@@ -109,22 +106,21 @@ export function QuestionComponent() {
             organizacao: responses[3],      
             valorCobrado: responses[4],     
             indicacao: responses[5],    
-          
-          sugestao: textAreaValue,
-          data: new Date().toLocaleDateString(),
-        };
-    
+            sugestao: textAreaValue,
+            data: new Date().toLocaleDateString(),
+        };   
         try {
-          await addDoc(pesquisaCollectionRef, payload);
-          alert("Dados enviados com sucesso!");
-          setResponses({});
-          setTextAreaValue("");
-          setCurrentPage(0);
+          await addDoc(pesquisaCollectionRef, payload)
+          alert("Dados enviados com sucesso!")
+          setResponses({})
+          setTextAreaValue("")
+          setCurrentPage(0)
         } catch (error) {
-          console.error("Erro ao enviar os dados: ", error);
-          alert("Preencha os dados e tente novamente!");
+          console.error("Erro ao enviar os dados: ", error)
+          alert("Preencha os dados e tente novamente!")
+          setCurrentPage(0)
         }
-      };
+      }
 
     const startIndex = currentPage * questionsPerPage
     const endIndex = startIndex + questionsPerPage
