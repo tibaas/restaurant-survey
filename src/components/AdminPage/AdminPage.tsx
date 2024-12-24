@@ -2,13 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { AuthProps } from "../LoginPage/LogScreen";
 import { HeaderContainer, PageContainer } from "./styles";
 import { useEffect, useState } from "react";
-import { collection, deleteDoc, doc, getDocs, getFirestore } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs, getFirestore, orderBy, query} from "firebase/firestore";
 import { firebaseApp } from "../../firebaseConfig";
 import { Timestamp } from "firebase/firestore"
 
 interface DataProps {
     id:string
-    data: string;
+    data:Date
     tempoAtendimento: string;
     opiniao: string;
     organizacao: string;
@@ -21,7 +21,7 @@ export function AdminPage({ setIsAuthenticated }:AuthProps) {
 
     const [databaseFile, setDataBaseFile] = useState<DataProps[]>([])
     const db = getFirestore(firebaseApp)
-    const pesquisaCollectionRef = collection(db, "pesquisa")
+    const pesquisaCollectionRef = collection(db, "testepesquisa")
 
 
     const navigate = useNavigate();
@@ -35,30 +35,33 @@ export function AdminPage({ setIsAuthenticated }:AuthProps) {
 
     useEffect(() => {
         const getUsers = async () => {
-          const data = await getDocs(pesquisaCollectionRef);
-          setDataBaseFile(
-            data.docs.map((doc) => {
-              const docData = doc.data();
-              return {
-                id: doc.id,
-                data: docData.data instanceof Timestamp ? docData.data.toDate().toLocaleDateString() : docData.data,
-                tempoAtendimento: docData.tempoAtendimento,
-                opiniao: docData.opiniao,
-                organizacao: docData.organizacao,
-                valorCobrado: docData.valorCobrado,
-                indicacao: docData.indicacao,
-                sugestao:docData.sugestao ,
-              };
-            })
-          );
+            const querySnapshot = await getDocs(
+                query(pesquisaCollectionRef, orderBy("data", "asc")) 
+            );
+    
+            setDataBaseFile(
+                querySnapshot.docs.map((doc) => {
+                    const docData = doc.data();
+                    return {
+                        id: doc.id,
+                        data: docData.data instanceof Timestamp ? docData.data.toDate() : new Date(docData.data), // Mantém como Date
+                        tempoAtendimento: docData.tempoAtendimento,
+                        opiniao: docData.opiniao,
+                        organizacao: docData.organizacao,
+                        valorCobrado: docData.valorCobrado,
+                        indicacao: docData.indicacao,
+                        sugestao: docData.sugestao,
+                    };
+                })
+            );
         };
-      
+    
         getUsers();
-      }, [pesquisaCollectionRef]);
+    }, [pesquisaCollectionRef]);
 
 
       async function deleteRow(id: string) {
-        const rowDoc = doc(db, "pesquisa", id)
+        const rowDoc = doc(db, "testepesquisa", id)
         await deleteDoc(rowDoc)
       }
 
@@ -91,7 +94,10 @@ export function AdminPage({ setIsAuthenticated }:AuthProps) {
                                 databaseFile.map((item) => {
                                     return(
                                         <tr key={item.id}>
-                                        <td>{item.data}</td>
+                                        <td>{item.data instanceof Date
+                                                ? item.data.toLocaleDateString()
+                                                : item.data}
+                                        </td>
                                         <td>{item.tempoAtendimento}</td>
                                         <td>{item.opiniao}</td>
                                         <td>{item.organizacao}</td>

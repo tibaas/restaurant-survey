@@ -82,7 +82,7 @@ export function QuestionComponent() {
     const questionsPerPage = 3
     const totalPages = Math.ceil(questions.length / questionsPerPage)
     const db = getFirestore(firebaseApp)
-    const pesquisaCollectionRef = collection(db, "pesquisa")
+    const pesquisaCollectionRef = collection(db, "testepesquisa")
 
     const handleNextPage = () => {
         if (currentPage < totalPages - 1) {
@@ -101,13 +101,13 @@ export function QuestionComponent() {
 
       const sendData = async () => {
         const payload = {
+            data: new Date(),
             tempoAtendimento: responses[1], 
             opiniao: responses[2],          
             organizacao: responses[3],      
             valorCobrado: responses[4],     
             indicacao: responses[5],    
             sugestao: textAreaValue,
-            data: new Date().toLocaleDateString(),
         };   
         try {
           await addDoc(pesquisaCollectionRef, payload)
