@@ -62,6 +62,9 @@ table {
       background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(36,154,145,0.989233193277311) 0%);
       color: #fff;
       font-weight: bold;
+    }
+    tr {
+      background: silver;
     } 
     tr:hover {
       background: teal;
